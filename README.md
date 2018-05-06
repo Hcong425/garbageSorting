@@ -27,5 +27,29 @@
 * socket.io
 * nodejs
 
+模块设计
+-
+* 回收模块
+主要负责回收点的配置
+回收记录的录入
+
+* 物品模块
+主要负责垃圾、商品管理
+
+* 积分模块
+主要负责管理用户的积分
+
+* 权限模块
+主要负责管理员权限的添加与分配，层级划分管理员
+
+
 项目截图
 -
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image1.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image2.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image3.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image4.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image5.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image6.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image7.png)
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image8.png)
