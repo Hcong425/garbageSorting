@@ -29,19 +29,26 @@
 
 模块设计
 -
-* 回收模块
+#### 回收模块
 主要负责回收点的配置
 回收记录的录入
 
-* 物品模块
+#### 物品模块
 主要负责垃圾、商品管理
 
-* 积分模块
+#### 积分模块
 主要负责管理用户的积分
 
-* 权限模块
+#### 权限模块
 主要负责管理员权限的添加与分配，层级划分管理员
 
+功能设计
+-
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image9.png)
+
+表结构
+-
+![](https://raw.githubusercontent.com/Hcong425/garbageSorting/master/image10.png)
 
 项目截图
 -
