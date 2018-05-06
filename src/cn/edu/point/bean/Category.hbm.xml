@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.point.bean.Category" table="GS_CATEGORY">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+		
+		<many-to-one name="parentCategory" class="cn.edu.point.bean.Category" column="CATEGORY_ID"></many-to-one>
+		
+		<set name="commodities" cascade="save-update" inverse="true" lazy="true" outer-join="false">
+			<key column="CATEGORY_ID"></key>
+			<one-to-many class="cn.edu.point.bean.Commodity"/>
+		</set>
+		
+		<set name="childCategories" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="CATEGORY_ID"></key>
+			<one-to-many class="cn.edu.point.bean.Category"/>
+		</set>
+	
+	</class>
+
+</hibernate-mapping>

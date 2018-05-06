@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.point.bean.Convert" table="GS_CONVERT">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="amount" type="java.lang.Integer" column="AMOUNT">
+		</property>
+
+		<property name="time" type="java.util.Date" column="TIME">
+		</property>
+		
+		<property name="point" type="java.lang.Integer" column="POINT">
+		</property>
+		
+		<many-to-one name="user" class="cn.edu.manger.bean.User" column="USER_ID"></many-to-one>
+		
+		<set name="convertItems" cascade="save-update" inverse="true" lazy="true" outer-join="false">
+			<key column="CONVERT_ID"></key>
+			<one-to-many class="cn.edu.point.bean.ConvertItem"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

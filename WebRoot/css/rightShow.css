@@ -1,0 +1,42 @@
+#main {
+    padding: 10px 35px 10px 275px;
+}
+.panel-default>.panel-heading {
+	height:42px;
+    background-color: #79ce92;
+    font-size: 16px;
+    color: white;
+}
+.panel-footer .form-control {
+	float: left;
+    width: 80px;
+    height:31px;
+}
+.panel-footer>lable{
+	float: left;
+	color:white;
+    line-height: 30px;
+    width: 80px;
+}
+.panel-footer {
+    height: 43px;
+    padding: 5px 20px;
+    background-color: #79ce92;
+}
+.panel-footer .pagination-lg{
+	margin: 0px;
+}
+.pagination  {
+    float: right;
+    margin: 0px;
+}
+#add {
+    border-radius: 10px;
+    margin-left: 30px;
+}
+#add i{
+	font-size:15px;
+}
+.table>tbody>tr:hover {  
+    background-color: #fff4f4;  
+}

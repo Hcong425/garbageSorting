@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.manger.bean.User" table="GS_USER">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+
+		<property name="password" type="java.lang.String" column="PASSWORD">
+		</property>
+
+		<property name="time" type="java.util.Date" column="TIME">
+		</property>
+
+		<property name="eamil" type="java.lang.String" column="EMAIL">
+		</property>
+		
+		<property name="telphone" type="java.lang.String" column="TELPHONE">
+		</property>
+		
+		<property name="address" type="java.lang.String" column="ADDRESS">
+		</property>
+		
+		<property name="point" type="java.lang.Integer" column="POINT">
+		</property>
+			
+		<set name="converts" cascade="save-update" inverse="true" lazy="true" outer-join="false">
+			<key column="USER_ID"></key>
+			<one-to-many class="cn.edu.point.bean.Convert"/>
+		</set>
+		<set name="rubbishItems" cascade="save-update" inverse="true" lazy="true" outer-join="false">
+			<key column="USER_ID"></key>
+			<one-to-many class="cn.edu.rubbish.bean.RubbishItem"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

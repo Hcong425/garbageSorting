@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.rubbish.bean.RubbishItem" table="GS_RUBBISHITEM">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="weight" type="big_decimal" column="WEIGHT">
+		</property>
+		
+		<property name="time" type="java.util.Date" column="TIME">
+		</property>
+		
+		<property name="point" type="java.lang.Integer" column="POINT">
+		</property>
+
+		<many-to-one name="rubbish" class="cn.edu.rubbish.bean.Rubbish" column="RUBBISH_ID"></many-to-one>
+		
+		<many-to-one name="recyclePoint" class="cn.edu.rubbish.bean.RecyclePoint" column="RECYCLEPOINT_ID"></many-to-one>
+		
+		<many-to-one name="user" class="cn.edu.manger.bean.User" column="USER_ID"></many-to-one>
+		
+		<many-to-one name="manger" class="cn.edu.manger.bean.Manger" column="MANGER_ID"></many-to-one>
+
+	</class>
+
+</hibernate-mapping>

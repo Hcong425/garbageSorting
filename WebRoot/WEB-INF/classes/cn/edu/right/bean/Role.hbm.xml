@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.right.bean.Role" table="GS_ROLE">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+		
+		<set name="mangers" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="ROLE_ID"></key>
+			<one-to-many class="cn.edu.manger.bean.Manger"/>
+		</set>
+		
+		<set name="rights" cascade="none" inverse="false"
+			table="GS_RIGHT_ROLE" lazy="false" outer-join="false">
+			<key column="ROLE_ID"></key>
+			<many-to-many class="cn.edu.right.bean.Right" column="RIGHT_ID"></many-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

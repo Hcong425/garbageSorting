@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.point.bean.Commodity" table="GS_COMMODITY">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+		
+		<property name="descr" type="java.lang.String" column="DESCR">
+		</property>
+		
+		<property name="img" type="java.lang.String" column="IMG">
+		</property>
+
+		<property name="price" type="big_decimal" column="PRICE">
+		</property>
+
+		<property name="point" type="java.lang.Integer" column="POINT">
+		</property>
+		
+		<property name="sales" type="java.lang.Integer" column="SALES">
+		</property>
+		
+		<property name="repertory" type="java.lang.Integer" column="REPERTORY">
+		</property>
+		
+		<property name="time" type="java.util.Date" column="TIME">
+		</property>
+		
+		<many-to-one name="category" class="cn.edu.point.bean.Category" column="CATEGORY_ID"></many-to-one>
+		
+		<set name="pointChanges" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="COMMODITY_ID"></key>
+			<one-to-many class="cn.edu.point.bean.PointChange"/>
+		</set>
+		
+		<set name="convertItems" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="COMMODITY_ID"></key>
+			<one-to-many class="cn.edu.point.bean.ConvertItem"/>
+		</set>
+	
+	</class>
+
+</hibernate-mapping>

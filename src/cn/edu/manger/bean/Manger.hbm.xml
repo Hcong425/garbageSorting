@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.manger.bean.Manger" table="GS_Manger">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+
+		<property name="password" type="java.lang.String" column="PASSWORD">
+		</property>
+
+		<many-to-one name="role" class="cn.edu.right.bean.Role" column="ROLE_ID"></many-to-one>
+		
+		<set name="recyclePoints" cascade="save-update" inverse="true" 
+			table="GS_MANGER_RECYCLEPOINT" lazy="true" outer-join="false">
+			<key column="MANGER_ID"></key>
+			<many-to-many class="cn.edu.rubbish.bean.RecyclePoint" column="RECYCLEPOINT_ID"></many-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

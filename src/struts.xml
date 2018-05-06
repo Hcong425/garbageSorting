@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />	
+	<package name="gs" extends="json-default">
+	
+		<interceptors>
+			<interceptor name="right" class="cn.edu.util.Intereptor.RightInterceptor"></interceptor>
+			<interceptor-stack name="gsStack">
+				<interceptor-ref name="right"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!-- <interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref> -->
+			</interceptor-stack>
+			
+		</interceptors>
+		
+		<default-interceptor-ref name="gsStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="input">error.jsp</result>
+			<result name="noRight">noRight.jsp</result>
+			<result name="login">login.jsp</result>
+			<result type="json" name="ajax">
+				<param name="root">result</param>
+			</result>
+		</global-results>
+		
+		<action name="skip_*">
+			<result>/WEB-INF/jsp/{1}.jsp</result>
+		</action>
+	
+		<action name="manger_*" class="mangerAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="logout">/login.jsp</result>
+			
+		</action>
+		
+		<action name="recyclePoint_*" class="recyclePointAction" method="{1}">
+			<result name="map">/WEB-INF/jsp/map.jsp</result>
+			<result name="success">/WEB-INF/jsp/recyclePointShow.jsp</result>
+			<result name="delete" type="redirect">recyclePoint_findAllByPage</result>
+			<result name="toEditPage">/WEB-INF/jsp/recyclePointAdd.jsp</result>
+			<result name="saveOrUpdate" type="redirect">recyclePoint_findAllByPage</result>
+		</action>
+		
+		<action name="rubbish_*" class="rubbishAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/rubbishShow.jsp</result>
+			<result name="delete" type="redirect">rubbish_findAllChildByPage</result>
+			<result name="saveOrUpdate" type="redirect">rubbish_findAllChildByPage</result>
+			<result name="toEditPage">/WEB-INF/jsp/rubbishAdd.jsp</result>
+		</action>
+		
+		<action name="rubbishItem_*" class="rubbishItemAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/rubbishItemShow.jsp</result>
+			<result name="add" type="redirect">rubbishItem_findAllByPage</result>
+			<result name="deletesuccess" type="redirect">rubbishItem_findAllByPage</result>
+		</action>
+		
+		<action name="pointChange_*" class="pointChangeAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/pointChange.jsp</result>
+		</action>
+		
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/userShow.jsp</result>
+			<result name="deleteSuccess" type="redirect">user_findAllByPage</result>
+		</action>
+		
+		<action name="right_*" class="rightAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/rightShow.jsp</result>
+			<result name="delete" type="redirect">right_findAllByPage</result>
+			<result name="toEditPage">/WEB-INF/jsp/rightAdd.jsp</result>
+			<result name="saveOrUpdateSuccess" type="redirect">right_findAllByPage</result>
+		</action>
+		
+		<action name="role_*" class="roleAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/roleShow.jsp</result>
+			<result name="toEditPage">/WEB-INF/jsp/roleAdd.jsp</result>
+			<result name="delete" type="redirect">role_findAllByPage</result>
+			<result name="setRole" type="redirect">role_toDistributionPage</result>
+			<result name="toDistributionPage">/WEB-INF/jsp/rightDistribution.jsp</result>
+			<result name="saveOrUpdate" type="redirect">role_findAllByPage</result>
+		</action>
+		
+		<action name="commodity_*" class="commodityAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/commodityShow.jsp</result>
+			<result name="saveOrUpdate" type="redirect">commodity_findAllByPage</result>
+			<result name="toEditPage">/WEB-INF/jsp/commodityAdd.jsp</result>
+			<result name="delete" type="redirect">commodity_findAllByPage</result>
+		</action>
+		
+		<action name="category_*" class="categoryAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/commodityAdd.jsp</result>
+			<result name="saveOrUpdate">commodity_findAllByPage</result>
+		</action>
+		
+		<action name="convert_*" class="convertAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/convertShow.jsp</result>
+			<result name="add">skip_convertItemAdd</result>
+		</action>
+		
+		<action name="cell_*" class="cellAction" method="{1}">
+			<result name="saveOrUpdateSuccess" type="redirect">recyclePoint_findAllByPage</result>
+		</action>
+		
+	</package>
+
+</struts>    

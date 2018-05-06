@@ -1,0 +1,14 @@
+.details{
+	width: 96%;
+	margin: 30px auto;
+}
+.details>.panel-heading{
+	background-color: #43c8aa;
+}
+.query{
+	width: 250px;
+	height: 40px;
+}
+.form .form-group {
+    padding: 5px 50px;
+}

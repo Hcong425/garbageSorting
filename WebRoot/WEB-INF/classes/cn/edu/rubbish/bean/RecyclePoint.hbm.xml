@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.rubbish.bean.RecyclePoint" table="GS_RECYCLEPOINT">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+
+		<property name="active" type="java.lang.Integer" column="ACTIVE">
+		</property>
+		
+		<property name="time" type="java.util.Date" column="TIME">
+		</property>
+
+		<many-to-one name="cell" class="cn.edu.rubbish.bean.Cell" column="CELL_ID"></many-to-one>
+		
+		<set name="rubbishItems" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="RECYCLEPOINT_ID"></key>
+			<one-to-many class="cn.edu.rubbish.bean.RubbishItem"/>
+		</set>
+		
+		<set name="mangers" cascade="save-update"
+			table="GS_MANGER_RECYCLEPOINT" lazy="false" outer-join="false">
+			<key column="RECYCLEPOINT_ID"></key>
+			<many-to-many class="cn.edu.manger.bean.Manger" column="MANGER_ID"></many-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

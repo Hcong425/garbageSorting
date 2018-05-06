@@ -1,0 +1,18 @@
+.panel-group .panel {
+	margin-bottom: 25px;
+}
+
+form>.panel-default {
+	width: 92.9%;
+	margin: 20px auto;
+}
+
+form>.panel-default>.panel-heading {
+	background-color: #eee;
+	color: black;
+	border-radius: 0px;
+}
+
+.form .form-group {
+	padding: 5px 50px;
+}

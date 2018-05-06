@@ -1,0 +1,226 @@
+
+.main {
+	padding: 0px 25px 10px 260px;
+}
+
+.breadcrumb {
+	width:98%;
+	padding: 12px 10px 12px 20px;
+	margin-bottom: 20px;
+	list-style: none;
+	border-radius: 0;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: -3px 4px 1px #ccc;
+	background: #fff;
+}
+
+@media ( min-width : 992px) bootstrap.css:5 .col-md-3 {
+	width
+	:
+	25%;
+
+}
+.panel-body .td{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.panel {
+	border-radius: 0px;
+}
+
+.board .panel {
+	padding: 12px 20px;
+	border: none;
+	height: 130px;
+	background: #fff;
+	box-shadow: -8px 10px 1px #ccc;
+}
+
+panel-primary {
+	display: inline-block;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+custom-styles.css: 70 .panel {
+	border-radius: 0px;
+}
+
+.number h3 {
+	font-size: 32px;
+	color: #676767;
+}
+
+.number small {
+    font-size: 20px;
+    color: #68b5e7;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 5px;
+    display: inline-block;
+}
+
+.board .number {
+	float: left;
+	margin-left:15px; 
+}
+
+.board .panel .icon .glyphicon {
+	font-size: 40px;
+    color: #FFFFFF;
+    padding: 19px;
+    border-radius:10px;
+    float: right;
+}
+
+.board .icon {
+	float: left;
+}
+
+.row .glyphicon-trash {
+	background: #d76b5e;
+}
+
+.row .glyphicon-retweet {
+	background: #0eb291;
+}
+
+.row .glyphicon-eye-open {
+	background: #638bbb;
+}
+
+.row .glyphicon-map-marker {
+	background: #bd30a6;
+}
+.row .glyphicon-tag {
+	background: #92310875;
+}
+.row .glyphicon-folder-close {
+	background: #306c7c75;
+}
+
+.fa {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.main .row .panel-heading i.fa{
+	margin: 5px 15px;
+	
+}
+
+.panel {
+	box-shadow: none;
+	background: transparent;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+}
+
+.panel {
+	margin-bottom: 40px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: -8px 10px 1px #ccc;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-image: initial;
+	border: 0px;
+}
+
+.panel-heading a i {
+	margin: 0 10px;
+	font-size: 20px;
+	color: white;
+	float: right;
+}
+.panel-heading .fa-repeat {
+	margin: 0 10px;
+	font-size: 18px;
+	color: #de8c82;
+	float: right;
+}
+.chart .panel-heading{
+	padding: 6px 20px;
+}
+.panel-group .panel {
+	background-color: #eee;
+	
+	padding-bottom: 35px;
+}
+
+.panel-default>.panel-heading {
+	color: #fff;
+	background-color: #7cb5ec;
+}
+
+.collapse.in {
+	background-color: white;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #eee;
+}
+.board div > .small-box-footer {
+    text-align: center;
+    float: right;
+    padding-top: 10px;
+    color: #a94442;
+    display: block;
+    z-index: 10;
+    background: #fff;
+    text-decoration: none;
+}
+
+.panel-group .panel+.panel {
+    margin-top: 0px;
+}
+.list-group {
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+.fa-long-arrow-up, .fa-arrow-up{
+	color:#86c01b;
+	margin-top: 10px;
+}
+.fa-long-arrow-down, .fa-arrow-down{
+	color:#f18585;
+	margin-top: 35px;
+}
+#rank{
+	float:right;
+	padding:0px;	
+}
+#rank .panel-body{
+	background-color: #f9f1f1;
+	padding: 10px;
+	padding-bottom: 5px;
+}
+.rubbishranklist a,.commodityranklist a{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.rankmove{
+	animation:rankmove 1s;
+	animation-fill-mode:forwards;
+}
+.rankback{
+	animation:rankback 1s;
+	animation-fill-mode:forwards;
+}
+@keyframes rankmove
+{
+	0%{margin-left :0;}
+	100%{margin-left: -230px;}
+}
+@keyframes rankback
+{
+	0%{margin-left :-230px;}
+	100%{margin-left: 0px;}
+}

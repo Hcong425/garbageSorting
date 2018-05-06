@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.rubbish.bean.Rubbish" table="GS_RUBBISH">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+
+		<property name="descr" type="java.lang.String" column="DESCR">
+		</property>
+		
+		<property name="image" type="java.lang.String" column="IMAGE">
+		</property>
+		
+		<property name="point" type="java.lang.Integer" column="POINT">
+		</property>
+		
+		<property name="active" type="java.lang.Integer" column="ACITVE"></property>
+
+		<many-to-one name="parRubbish" class="cn.edu.rubbish.bean.Rubbish" column="RUBBISH_ID">
+		</many-to-one>
+		
+		<set name="childRubbishs" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="RUBBISH_ID"></key>
+			<one-to-many class="cn.edu.rubbish.bean.Rubbish"/>
+		</set>
+		
+		<set name="pointChanges" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="RUBBISH_ID"></key>
+			<one-to-many class="cn.edu.point.bean.PointChange"/>
+		</set>
+		
+		<set name="rubbishItems" cascade="save-update" inverse="true" lazy="false" outer-join="false">
+			<key column="RUBBISH_ID"></key>
+			<one-to-many class="cn.edu.rubbish.bean.RubbishItem"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

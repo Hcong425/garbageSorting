@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.edu.right.bean.Classes" table="GS_CLASSES">
+
+		<id name="id" type="java.lang.Integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME">
+		</property>
+		
+		<set name="rights" cascade="save-update" inverse="true" lazy="true" outer-join="false">
+			<key column="CLASSES_ID"></key>
+			<one-to-many class="cn.edu.right.bean.Right"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>
